@@ -1,0 +1,373 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #2c3e50, #bdc3c7); /* ไล่สีเทาเข้มถึงเทาอ่อน */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ห่อเนื้อหาทั้งหมด */
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 60px; /* ดันเนื้อหาให้พ้นแถบด้านบน */
+}
+
+/* แถบสีดำด้านบน */
+.top-bar {
+    width: 100%;
+    background: linear-gradient(to right, #2c3e50, #1abc9c);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.site-logo {
+    width: 50px; /* กำหนดความกว้างของโลโก้ */
+    height: 50px; /* กำหนดความสูง */
+    object-fit: cover; /* ปรับให้ภาพอยู่ในขอบเขต */
+    border-radius: 50%; /* หากต้องการทำให้ภาพเป็นวงกลม */
+}
+
+/* การจัดเรียงสินค้า */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* ให้สินค้าเลื่อนลงแถวใหม่เมื่อพื้นที่ไม่พอ */
+    gap: 20px; /* ระยะห่างระหว่างสินค้า */
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 80px;
+}
+
+.product {
+    position: relative;
+    width: 20%;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    vertical-align: top; /* เพื่อให้สินค้าเรียงแถว */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* เพิ่มแอนิเมชันการขยาย */
+}
+
+
+.product:hover {
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อชี้ */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    z-index: 1;
+}
+
+.product.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #34495e, #2c3e50); /* ไล่สีเทาเข้ม */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 350px; /* เพิ่มระยะห่างด้านบน */
+}
+
+footer .social-links a {
+    color: #e74c3c;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px; /* ปรับขนาดตัวอักษร */
+}
+
+footer .social-links a:hover {
+    color: white;
+    text-decoration: underline; /* เพิ่มขีดเส้นใต้เมื่อชี้ */
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: 45%; /* ลดขนาดสินค้า */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 90%; /* สินค้า 1 ชิ้นต่อแถว */
+    }
+}
+
+.drawer {
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scaleY(0); /* ซ่อนแถบราคา */
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product:hover .drawer {
+    opacity: 1;
+    transform: scaleY(1); /* ขยายแถบราคา */
+    margin-bottom: 20px; /* เพิ่มพื้นที่ใต้แถบราคา */
+}
+
+.drawer .price {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.drawer .add-to-cart {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.drawer .add-to-cart:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: 25%; /* เพิ่มขนาดสินค้า */
+    }
+
+    .product img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 45%; /* เพิ่มขนาดสินค้า */
+    }
+
+    .product img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* ระยะห่างระหว่างโลโก้และปุ่ม */
+}
+
+.site-logo {
+    width: 50px; /* ขนาดโลโก้ */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%; /* โลโก้ทรงกลม */
+}
+
+/* ปุ่มเมนู */
+.menu-btn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: #1abc9c;
+}
+
+/* เมนูแบบเลื่อนออก */
+.menu-drawer {
+    position: fixed;
+    top: 0;
+    left: -500px; /* ซ่อนเมนูด้านซ้าย */
+    width: 300px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-drawer.open {
+    left: 0; /* แสดงเมนู */
+}
+
+
+/* ปุ่มปิดเมนู */
+.close-menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.close-menu-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ปุ่มตะกร้าสินค้า */
+.cart-btn {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+    right: 50px; /* ย้ายปุ่มไปทางซ้าย 50px */
+}
+
+.cart-btn:hover {
+    background-color: #16a085;
+}
+
+#cart-count {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* แถบรายการสินค้า */
+.cart-drawer {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+    z-index: 1000;
+}
+
+.cart-drawer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-items li span {
+    flex: 1;
+}
+
+.remove-item {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-item:hover {
+    background-color: #c0392b;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.home-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.home-icon {
+    width: 30px; /* ขนาดของไอคอน */
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.2); /* ขยายไอคอนเมื่อชี้ */
+}

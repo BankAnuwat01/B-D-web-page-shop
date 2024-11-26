@@ -1,0 +1,380 @@
+/* พื้นหลังหลัก */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* พื้นหลังไล่สี */
+}
+/* Footer Styles */
+.footer {
+    background-color: #2C3E50; /* สีพื้นหลัง */
+    color: #fff; /* สีข้อความ */
+    text-align: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer .social-links {
+    margin-bottom: 10px;
+  }
+  
+  .footer .social-link {
+    color: #e74c3c; /* สีลิงก์ */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์เมื่อชี้เมาส์ */
+  }
+  
+  .footer .social-link:hover {
+    color: #f39c12; /* สีลิงก์เมื่อชี้เมาส์ */
+  }
+  
+  .footer p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #ddd; /* สีข้อความลิขสิทธิ์ */
+  }
+  
+/* Section: สมาชิกทีมของเรา */
+.team-section {
+    background: linear-gradient(to bottom right, #2c3e50, #bdc3c7);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Section: บทความล่าสุด */
+.blog-section {
+    background-color: #1A237E; /* สีน้ำเงินเข้ม */
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff; /* สีข้อความในส่วนบทความ */
+    border-radius: 20px 20px 0 0; /* ขอบบนโค้ง */
+}
+
+/* Blog Title */
+.blog-section h2 {
+    font-size: 36px;
+    color: #fff; /* สีข้อความหัวข้อ */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ข้อความ */
+}
+
+/* Blog Cards */
+.blog-post {
+    background: #ffffff; /* การ์ดสีขาว */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    color: #333; /* สีข้อความในการ์ด */
+}
+
+/* ปุ่มอ่านเพิ่มเติม */
+.btn-read-more {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #3949AB; /* ปุ่มสีน้ำเงินอ่อน */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #1E88E5; /* สีปุ่มเข้มขึ้นเมื่อชี้เมาส์ */
+}
+
+/* ตรวจสอบซ้ำใน testimonial-section */
+.testimonial-section {
+    background-color: #eaf9fc;
+    padding: 40px;
+    text-align: center;
+}
+
+
+.testimonial-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section h2 {
+        font-size: 40px;
+    }
+}
+
+.logo-container img:hover {
+    transform: rotate(360deg);
+    transition: transform 1s ease;
+}
+
+.logo-container {
+    position: absolute;
+    top: 80px; /* ระยะจากด้านบน */
+    left: 10px; /* ระยะจากด้านซ้าย */
+    z-index: 100; /* ให้อยู่ด้านหน้าสุด */
+}
+
+.logo-container img {
+    width: 100px; /* ขนาดของโลโก้ */
+    height: 100px; /* ขนาดของโลโก้ */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    border: 3px solid white; /* เส้นขอบสีขาว */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูเด่น */
+    object-fit: cover; /* ปรับให้ภาพไม่บิดเบี้ยว */
+}
+
+.about-section {
+    background-color: #e6f7ff; /* สีพื้นหลัง */
+    padding: 40px 20px; /* ระยะห่างด้านใน */
+    text-align: center; /* จัดให้อยู่กึ่งกลาง */
+}
+
+.about-section h2 {
+    font-size: 55px; /* ขนาดตัวอักษรใหญ่ */
+    font-weight: bold; /* ตัวหนา */
+    color: #FFD700; /* สีทอง */
+    margin-bottom: 30px; /* เพิ่มระยะห่างจากข้อความด้านล่าง */
+    font-family: 'Poppins', sans-serif; /* ฟอนต์ที่ทันสมัย */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเพื่อให้เด่น */
+}
+
+.about-content {
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.about-content {
+    max-width: 800px; /* ความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลาง */
+    text-align: left; /* จัดข้อความให้อยู่ชิดซ้าย */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    line-height: 1.8; /* ระยะห่างระหว่างบรรทัด */
+    color: #333; /* สีข้อความ */
+}
+
+.about-content p {
+    margin-bottom: 20px; /* ระยะห่างระหว่างย่อหน้า */
+}
+
+.about-content a {
+    color: #0056b3; /* สีลิงก์ */
+    text-decoration: none; /* ไม่แสดงเส้นใต้ */
+}
+
+.about-content a:hover {
+    text-decoration: underline; /* แสดงเส้นใต้เมื่อเอาเมาส์ชี้ */
+    color: #004080; /* เปลี่ยนสีลิงก์เมื่อชี้เมาส์ */
+}
+
+/* พื้นหลังส่วน "เกี่ยวกับเรา" */
+.about-section {
+    text-align: center;
+    padding: 2rem 0;
+    background: #4fc3f7; /* สีฟ้าสดใส */
+    color: #333; /* สีข้อความ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เงาเพิ่มมิติ */
+}
+
+/* เปลี่ยนฟอนต์ของหัวข้อ "สมาชิกทีมของเรา" */
+.team-section h2 {
+    font-size: 60px; /* เพิ่มขนาดฟอนต์ */
+    font-family: 'Poppins', sans-serif; /* เปลี่ยนฟอนต์เป็น Poppins */
+    font-weight: bold; /* ตัวหนา */
+    color: #2c3e50; /* สีข้อความ */
+    margin-bottom: 40px; /* เพิ่มระยะห่างจากข้อความด้านล่าง */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+}
+
+/* เพิ่มฟอนต์จาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');  /* ฟอนต์ Poppins */
+
+/* พื้นหลังส่วน "สมาชิกทีมของเรา" */
+.team-section {
+    padding: 2rem 0;
+    text-align: center;
+    background: #eaf9fc; /* พื้นหลังสีฟ้าจาง */
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(90deg, #2c3e50, #1abc9c);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* เพิ่ม Transition */
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+    color: #f39c12; /* สีส้มเมื่อ Hover */
+}
+
+/* Team Container */
+.team-container {
+    display: grid; /* ใช้ Grid แทน Flexbox */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center; /* จัดกึ่งกลาง */
+}
+
+/* Team Member Cards */
+.team-member {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* ลื่นขึ้น */
+}
+
+.team-member:hover {
+    transform: scale(1.1); /* ขยายมากขึ้น */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเด่นขึ้น */
+}
+
+/* Member Image */
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 5px solid #3498db; /* ขอบรูปภาพ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* ปรับให้รูปไม่บิดเบี้ยว */
+}
+
+/* Member Name */
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+/* Member Role */
+.team-member p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+/* Member Link */
+.team-member a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s ease; /* เพิ่ม Transition */
+}
+
+.team-member a:hover {
+    color: #e74c3c; /* เปลี่ยนเป็นสีแดง */
+    text-decoration: underline; /* ขีดเส้นใต้ */
+}
+/* Navbar Styling */
+nav {
+    background: linear-gradient(to right, #2c3e50, #1abc9c); /* ไล่สีจากเทาเข้มไปเขียว */
+    padding: 15px 0;
+    text-align: right; /* จัดข้อความชิดขวา */
+    position: sticky; /* ทำให้ Navbar เลื่อนตาม */
+    top: 0;
+    z-index: 1000; /* ให้อยู่ด้านบนสุด */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* สีข้อความ */
+    font-size: 18px;
+    font-weight: bold; /* ตัวหนา */
+    transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์ hover */
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* เปลี่ยนสีข้อความเมื่อชี้เมาส์ */
+    text-decoration: underline; /* เพิ่มขีดเส้นใต้ */
+}
+
+/* Section Styles */
+.blog-section {
+    background-color: #eaf9fc; /* สีพื้นหลังฟ้าจาง */
+    padding: 40px 20px; /* ระยะห่าง */
+    text-align: center;
+}
+
+.blog-section h2 {
+    font-size: 36px; /* ขนาดตัวอักษร */
+    color: #2c3e50; /* สีหัวข้อ */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+}
+
+/* Blog Container */
+.blog-container {
+    display: flex; /* จัดเรียงแบบแถว */
+    gap: 20px; /* ระยะห่างระหว่างบทความ */
+    justify-content: center; /* จัดกึ่งกลาง */
+    flex-wrap: wrap; /* ให้บรรทัดใหม่ถ้าพื้นที่ไม่พอ */
+}
+
