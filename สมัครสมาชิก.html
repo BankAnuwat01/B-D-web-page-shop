@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครสมาชิก</title>
+    <link rel="stylesheet" href="Username.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="Hat.html">หมวดหมู่</a></li>
+            <li><a href="#">คำรับรอง</a></li>
+            <li><a href="#">ติดต่อเรา</a></li>
+            <li><a href="IndexT1.html">ทีมงาน</a></li>
+        </ul>
+    </nav>
+
+    <!-- สมัครสมาชิก Form -->
+    <div class="form-container">
+        <h2>สมัครสมาชิก</h2>
+        <form action="#" method="POST">
+            <label for="username">Username :</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password :</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="fullname">ชื่อ-สกุล :</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">อีเมล์ :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">เบอร์โทร :</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">ที่อยู่ :</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <button type="submit">สมัครสมาชิก</button>
+        </form>
+    </div>
+</body>
+</html>

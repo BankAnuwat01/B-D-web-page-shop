@@ -1,0 +1,288 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* เปลี่ยนฟอนต์จาก 'Kanit' เป็น 'Roboto' */
+    margin: 0;
+    padding: 0;
+    background-color: #eaf4f8; /* สีฟ้าอ่อน */
+}
+
+.logo-container img:hover {
+    transform: rotate(360deg);
+    transition: transform 1s ease;
+}
+
+/* เพิ่มแอนิเมชันกระพริบ */
+.blink {
+    animation: blink-animation 1s infinite; /* ความเร็วและจำนวนครั้ง */
+}
+
+/* กำหนดคีย์เฟรมสำหรับแอนิเมชัน */
+@keyframes blink-animation {
+    0% {
+        opacity: 1; /* แสดงภาพ */
+    }
+    50% {
+        opacity: 0; /* ซ่อนภาพ */
+    }
+    100% {
+        opacity: 1; /* แสดงภาพ */
+    }
+}
+
+.image-left,
+.image-right {
+    position: absolute;
+    top: 25%; /* เลื่อนภาพลงให้ต่ำกว่า 50% */
+    transform: translateY(-50%);
+}
+
+.image-left {
+    left: 30px; /* ระยะจากขอบซ้าย */
+}
+
+.image-right {
+    right: 30px; /* ระยะจากขอบขวา */
+}
+
+.image-left img,
+.image-right img {
+    width: 150px; /* ปรับขนาดภาพให้เล็กลง */
+    height: auto; /* คงสัดส่วนของภาพ */
+}
+
+/* Logo */
+.logo-container {
+    position: absolute;
+    top: 60px; /* เพิ่มระยะห่างจากด้านบนเพื่อเลื่อนลง */
+    left: 10px; /* ระยะห่างจากด้านซ้าย */
+    width: 80px;
+    height: 80px;
+    z-index: 1000; /* ให้อยู่ด้านบนสุด */
+}
+
+.logo-container img {
+    width: 100%; /* ขนาดเต็มตาม container */
+    height: 100%;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    object-fit: cover; /* ตัดส่วนที่เกินและรักษาสัดส่วน */
+    border: 3px solid white; /* เพิ่มกรอบสีขาวรอบโลโก้ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+}
+
+/* Navbar Styling */
+nav {
+    background: linear-gradient(to right, #2c3e50, #1abc9c); /* ไล่สีจากเทาเข้มไปเขียว */
+    padding: 15px 0;
+    text-align: right; /* จัดข้อความชิดขวา */
+    position: sticky; /* ทำให้ Navbar เลื่อนตาม */
+    top: 0;
+    z-index: 999; /* ให้อยู่ด้านล่างโลโก้ */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* สีข้อความ */
+    font-size: 18px;
+    font-weight: bold; /* ตัวหนา */
+    transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์ hover */
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* เปลี่ยนสีข้อความเมื่อชี้เมาส์ */
+    text-decoration: underline; /* เพิ่มขีดเส้นใต้ */
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #56ccf2, #2f80ed); /* ไล่สีฟ้าถึงน้ำเงิน */
+    color: white;
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 700; /* ตัวหนา */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 20px;
+    font-weight: 400; /* ตัวปกติ */
+    margin-bottom: 30px;
+}
+
+header .btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+header .btn:hover {
+    background-color: #c0392b;
+}
+
+/* Features Section */
+
+.header-content .btn {
+    background-color: #FF5733; /* สีพื้นหลังปุ่ม */
+    color: #FFFFFF; /* สีตัวอักษร */
+    padding: 15px 30px; /* เพิ่มระยะรอบตัวอักษรในปุ่ม */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ความหนาของตัวอักษร */
+    border: none; /* เอาเส้นขอบออก */
+    border-radius: 8px; /* เพิ่มความโค้งของมุมปุ่ม */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ปุ่ม */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* เพิ่มเอฟเฟกต์เมื่อ hover */
+}
+
+.header-content .btn:hover {
+    background-color: #E74C3C; /* เปลี่ยนสีปุ่มเมื่อ hover */
+    transform: scale(1.1); /* ขยายขนาดเมื่อ hover */
+}
+
+.header-content h1 {
+    color: #FFD700; /* สีทอง */
+    font-family: 'Poppins', sans-serif; /* เลือกฟอนต์ที่สวยงาม */
+    font-size: 90px; /* กำหนดขนาดฟอนต์ */
+    font-weight: 700; /* ความหนาของฟอนต์ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ดูโดดเด่น */
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    color: #FFC107; /* สีทองอ่อน */
+    font-size: 25px; /* ขนาดตัวอักษรสำหรับคำอธิบาย */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+#features h2 {
+    font-family: 'Montserrat', sans-serif; /* เปลี่ยนฟอนต์ */
+    font-size: 40px; /* ขนาดฟอนต์ใหญ่ขึ้น */
+    font-weight: 600; /* ใช้ฟอนต์หนาปานกลาง */
+    color: #222; /* เปลี่ยนสีให้เข้มขึ้น */
+    text-transform: uppercase; /* ทำตัวอักษรใหญ่ทั้งหมด */
+    letter-spacing: 2px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
+    margin-bottom: 30px;
+    text-align: center; /* จัดตำแหน่งให้อยู่กึ่งกลาง */
+}
+
+#features {
+    padding: 50px 20px;
+    background-color: #dff5fa; /* สีฟ้าขาว */
+    text-align: center;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #f0f9ff;
+}
+
+.feature-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover img {
+    transform: rotate(10deg);
+}
+
+/* Testimonial Section */
+#testimonial {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #dff5fa, #34495e); /* สีฟ้าอ่อนไล่เฉดถึงน้ำเงินเข้ม */
+    text-align: center;
+    color: white;
+}
+
+#testimonial h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background-color: rgba(255, 255, 255, 0.9); /* สีพื้นหลังแบบโปร่งใส */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-item p {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.testimonial-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #34495e, #2c3e50); /* ไล่สีเทาเข้ม */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .social-links a {
+    color: #e74c3c;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: white;
+}
